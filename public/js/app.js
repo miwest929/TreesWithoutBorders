@@ -1,4 +1,6 @@
-var map = L.map('map').setView([40.7127, -74.0059], 13);
+$("#map").height($(window).height()).width($(window).width());
+
+var map = L.map('map').setView([40.7127, -74.0059], 11);
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18,
@@ -6,8 +8,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: 'pk.eyJ1IjoibXB3ZXN0OTI5IiwiYSI6IjkzYzUxMTY4NTQ5NzEzOWY3NWU1MWY3YzNiMTUwMGIxIn0.j5Pp4ifPG1I4ZIMaGtKtqA'
 }).addTo(map);
 
-var neighborhoods = [];
-$.get('/neighborhoods', function(data, status) {
+$.get('/districts', function(data, status) {
   var getStyle = function(color) {
     return {
       "color": color,
@@ -27,24 +28,24 @@ $.get('/neighborhoods', function(data, status) {
     return getStyle( colorStyle[colorIndex] );
   };
 
-  var neighborhoodLayer = L.geoJson(data, {
+  var districtLayer = L.geoJson(data, {
     onEachFeature: function (feature, layer) {
-      neighborhoods.push(feature);
       //layer.bindPopup(feature.properties.neighborhood);
     },
     style: function(feature) {
-      switch(feature.properties.borough) {
+      /*switch(feature.properties.borough) {
         case 'Bronx': return bronxStyle;
         case 'Brooklyn': return brooklynStyle;
         case 'Manhattan': return manhattanStyle;
         case 'Queens': return queensStyle;
         case 'Staten Island': return statenIslandStyle;
-      }
+      }*/
+      return getStyle("#339966");
     }
   }).addTo(map);
 
   var source = null;
-  neighborhoodLayer.on("click", function (e) {
+  districtLayer.on("click", function (e) {
     //TODO: Implement
   });
 });

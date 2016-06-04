@@ -32,11 +32,11 @@ var loadRecycleBinData = function(path) {
   });
 };
 
-app.get('/neighborhoods', function(req, res, next) {
-  neighborhoodGeoJson = fs.readFileSync("data/nyc-neighborhoods.geojson");
+app.get('/districts', function(req, res, next) {
+  districtsGeoJson = fs.readFileSync("public/json/commdists.json");
 
   res.setHeader('content-type', 'application/json');
-  res.status(200).send(neighborhoodGeoJson);
+  res.status(200).send(districtsGeoJson);
 });
 
 // Fire it up (start our server)
