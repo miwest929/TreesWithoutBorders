@@ -46,7 +46,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 				opacity: 1,
 				color: 'white',
 				dashArray: '3',
-				fillOpacity: 0.7,
+				fillOpacity: 1.0,
 				fillColor: getColor(feature.properties.scores_Final)
 			};
 		}
@@ -95,10 +95,15 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 // year button handlers
 $('#ninetyFiveBtn').on('click', function (e) {
   console.log("Show 1995 trees");
+  geojson = L.geoJson(commdists95, {
+    style: style,
+    onEachFeature: onEachFeature
+  }).addTo(map);
 })
 
 $('#fiveBtn').on('click', function (e) {
   console.log("Show 1995 trees");
+
 })
 
 $('#twentyFifteenBtn').on('click', function (e) {
