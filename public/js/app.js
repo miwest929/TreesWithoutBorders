@@ -97,6 +97,14 @@ $('#ninetyFiveBtn').on('click', function (e) {
   console.log("Show 1995 trees");
 })
 
+$('#fiveBtn').on('click', function (e) {
+  console.log("Show 1995 trees");
+})
+
 $('#twentyFifteenBtn').on('click', function (e) {
   console.log("Show 2015 trees");
+  geojson = L.geoJson(commdistsSample, {
+    style: style,
+    onEachFeature: onEachFeature
+  }).addTo(map);
 })
