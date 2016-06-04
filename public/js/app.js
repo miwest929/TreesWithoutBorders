@@ -12,7 +12,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: 'pk.eyJ1IjoibXB3ZXN0OTI5IiwiYSI6IjkzYzUxMTY4NTQ5NzEzOWY3NWU1MWY3YzNiMTUwMGIxIn0.j5Pp4ifPG1I4ZIMaGtKtqA'
 }).addTo(map);
 
-// control that shows state info on hover
+// control that shows cb info on hover
 		var info = L.control();
 
 		info.onAdd = function (map) {

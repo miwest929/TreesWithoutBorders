@@ -4,3 +4,18 @@
   position: absolute;
   top: 0;
 }
+
+h4{
+    background: #fff;
+    border-radius: 5px;
+    padding:20px;
+    
+}
+
+.btn-group, .btn-group-vertical{
+  z-index: 10;
+  padding: 20px 50px;
+  position: absolute;
+  left: 0;
+  width: 275px !important;
+}
