@@ -17,7 +17,7 @@ app.use(bodyParser());
 
 app.use("/", express.static(__dirname + "/public/"));
 
-var loadRecycleBinData = function(path) {
+var loadTreeCensusData = function(path) {
   var data = JSON.parse( fs.readFileSync(path, 'utf8') );
 
   return data['data'].map(function(row) {

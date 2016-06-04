@@ -1,3 +1,5 @@
+$("#map").height($(window).height()).width($(window).width());
+
 var map = L.map('map').setView([40.7127, -74.0059], 11);
 map.scrollWheelZoom.disable();
 map.dragging.disable();
