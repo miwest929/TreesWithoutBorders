@@ -29,15 +29,18 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 
 		// get color depending on population density value
-		function getColor(d) {
-			return d > 100 ? '#800026' :
-			       d > 50  ? '#BD0026' :
-			       d > 20  ? '#E31A1C' :
-			       d > 10  ? '#FC4E2A' :
-			       d > 5   ? '#FD8D3C' :
-			       d > 2   ? '#FEB24C' :
-			       d > 1   ? '#FED976' :
-			                  '#FFEDA0';
+    function getColor(d) {
+			return d > 100 ? '#276419' :
+			       d > 90  ? '#4d9221' :
+			       d > 80  ? '#7fbc41' :
+			       d > 70  ? '#b8e186' :
+			       d > 60  ? '#e6f5d0' :
+			       d > 50  ? '#fde0ef' :
+			       d > 40  ? '#f1b6da' :
+             d > 30  ? '#de77ae' :
+             d > 20  ? '#c51b7d' :
+             d > 10  ? '#8e0152' :
+			                  '#cccccc';
 		}
 
 		function style(feature) {
