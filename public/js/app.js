@@ -115,3 +115,12 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 		};
 
 		legend.addTo(map);
+
+// year button handlers
+$('#ninetyFiveBtn').on('click', function (e) {
+  console.log("Show 1995 trees");
+})
+
+$('#twentyFifteenBtn').on('click', function (e) {
+  console.log("Show 2015 trees");
+})
