@@ -30,16 +30,13 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 		// get color depending on population density value
     function getColor(d) {
-			return d > 100 ? '#276419' :
-			       d > 90  ? '#4d9221' :
-			       d > 80  ? '#7fbc41' :
-			       d > 70  ? '#b8e186' :
-			       d > 60  ? '#e6f5d0' :
-			       d > 50  ? '#fde0ef' :
-			       d > 40  ? '#f1b6da' :
-             d > 30  ? '#de77ae' :
-             d > 20  ? '#c51b7d' :
-             d > 10  ? '#8e0152' :
+			return d > 1 ? '#276419' :
+			       d > .95  ? '#4d9221' :
+			       d > .85  ? '#b8e186' :
+			       d > .8  ? '#e6f5d0' :
+			       d > .7  ? '#f1b6da' :
+             d > .6  ? '#c51b7d' :
+             d > 0  ? '#8e0152' :
 			                  '#cccccc';
 		}
 
@@ -50,7 +47,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 				color: 'white',
 				dashArray: '3',
 				fillOpacity: 0.7,
-				fillColor: getColor(feature.properties.score)
+				fillColor: getColor(feature.properties.scores_Final)
 			};
 		}
 
