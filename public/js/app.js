@@ -37,7 +37,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 			       d > .7  ? '#f1b6da' :
              d > .6  ? '#c51b7d' :
              d > 0  ? '#8e0152' :
-			                  '#cccccc';
+			                  '#999999';
 		}
 
 		function style(feature) {
