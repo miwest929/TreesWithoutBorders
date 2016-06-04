@@ -1,0 +1,33 @@
+{
+  "name": "opennyc",
+  "version": "0.0.0",
+  "description": "Node app for the TreesCount hackathon!",
+  "main": "server.js",
+  "scripts": {
+    "watch": "watchify app.js -o public/js/bundle.js -v",
+    "browserify": "browserify app.js | uglifyjs > public/js/bundle.js",
+    "build": "npm run browserify ",
+    "start": "npm run watch & nodemon server.js"
+  },
+  "author": "Michael West",
+  "dependencies": {
+    "express": "~4.9.7",
+    "pg": "^4.1.1",
+    "q": "^1.1.2",
+    "body-parser":"*",
+    "csv": "*",
+    "express-jquery": "^1.8.3"
+  },
+  "devDependencies": {
+    "browserify": "~6.0.3",
+    "nodemon": "^1.2.1",
+    "reactify": "~0.14.0",
+    "uglify-js": "~2.4.15",
+    "watchify": "~2.0.0"
+  },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  }
+}
